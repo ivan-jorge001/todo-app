@@ -1,0 +1,14 @@
+.button {
+  width: 120px;
+  height: 30px;
+  font-weight: 300;
+  background: black;
+  border-radius: 3px;
+  font-size: 14px;
+  color: #ffffff;
+  letter-spacing: 1px;
+  border: none; }
+  .button.inverseColor {
+    color: black;
+    background: #ffffff;
+    border: 1px solid black; }

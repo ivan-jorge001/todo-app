@@ -1,0 +1,132 @@
+@import '../../styles/_vars.sass'
+@import '../../styles/_bulma.sass'
+// TODO: user rem and change to colors vars
+
+.homeContainer
+  width: 100%
+  height: 100vh
+  display: flex
+  justify-content: center
+  align-items: center
+  background-image: $backgroundGradient
+
+
+  .background
+    position: fixed
+    z-index: 0
+    width: 100%
+    -webkit-filter: blur(5px)
+    -moz-filter: blur(5px)
+    -o-filter: blur(5px)
+    -ms-filter: blur(5px)
+    filter: blur(5px)
+
+  .backgroundMobile
+    @extend .background
+
+  .formBox
+    position: absolute
+    width: 350px
+    min-height: 300px
+    padding: 1rem 0
+    background: white
+    box-shadow: 2px 0 4px 0 $black-transparent-05
+    border-radius: 2px
+    transform: translateX(35%)
+    transition: all 1s
+    @include mobile()
+      transform: translateX(0)
+
+    &.left
+      transition: all 1s
+      transform: translateX(-35%)
+      @include mobile()
+        transform: translateX(0)
+
+    .formContainer
+      display: flex
+      justify-content: center
+
+      .form
+        margin-top: 35px
+        width: 80%
+
+      .formTitle
+        font-size: 20px
+        font-weight: 300
+        color: $brand
+        letter-spacing: 1px
+        text-align: left
+        margin-bottom: 10px
+
+      .buttonContainer
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-top: 10px
+
+      .link
+        font-family: Helvetica
+        font-size: 12px
+        color: $light-ocean
+        letter-spacing: 0.5px
+        cursor: pointer
+        &:hover
+          color: $brand
+
+  .authOverlay
+    z-index: 1
+    width: inherit
+    height: inherit
+    display: flex
+    justify-content: center
+    align-items: center
+    background: $black-transparent-01
+
+    .panel
+      width: 652px
+      height: 280px
+      background: $mineShaft
+      border-radius: 2px
+      display: flex
+      align-items: center
+      justify-content: space-between
+      @include mobile()
+        transition: all 1s
+        opacity: 0
+
+      .panelText
+        padding: 40px
+        color: $white
+        display: flex
+        flex-direction: column
+        width: 30%
+
+        .title
+          font-size: 20px
+          font-weight: 300
+          color: $gray
+          letter-spacing: 0.83px
+          text-align: left
+
+
+        .subtitle
+          font-size: 10px
+          color: $gray
+          letter-spacing: 0
+          text-align: left
+          line-height: 14px
+
+        .button
+          width: 100px
+          height: 26px
+          padding: 0
+          margin: 0
+          text-align: center
+          background: transparent
+          border: 1px solid $gray
+          border-radius: 3px
+          font-size: 10px
+          color: $gray
+          letter-spacing: 0.83px
+          margin-top: 15px
